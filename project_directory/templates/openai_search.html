@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI 책 검색</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/maru-buri.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 상단 네비게이션 -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/">ReadMate</a>
+        </div>
+    </nav>
+
+    <!-- 검색 창 -->
+    <div class="chat-wrapper">
+    <div class="openai-chat-container">
+        <div class="chat-header">
+            <h2>책 검색 - AI에게 물어보세요!</h2>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <!-- 대화 메시지 -->
+        </div>
+        <div class="chat-input-container">
+            <textarea id="chatInput" placeholder="책 추천을 원하시거나 장르나 재미있게 본 책을 알려주세요"></textarea>
+            <button id="sendMessageBtn">전송</button>
+        </div>
+    </div>
+</div>
+    <footer class="footer">
+        <h4>Made by Group2 : Minwoo, Teahyun, Sukyun</h4>
+        <h4>alsdn3015@g.shingu.ac.kr</h4>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/openai_chat.js') }}"></script>
+</body>
+</html>
