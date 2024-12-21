@@ -30,10 +30,10 @@
    - OpenAI API ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
   
 # 실행화면
-![DemoScreen](.DemoScreen/MainPage1.png)
-![DemoScreen](.DemoScreen/MainPage2.png)
-![DemoScreen](.DemoScreen/AIChat1.png)
-![DemoScreen](.DemoScreen/AIChat2.png)
+![DemoScreen1](./DemoScreen/MainPage1.png)
+![DemoScreen2](./DemoScreen/MainPage2.png)
+![DemoScreen3](./DemoScreen/AIChat1.png)
+![DemoScreen4](./DemoScreen/AIChat2.png)
 
 
 #소스코드
