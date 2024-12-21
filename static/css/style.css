@@ -1,0 +1,433 @@
+/* 전체 설정 */
+body {
+    font-family: 'MaruBuriSemiBold';    
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+a {
+    color: inherit; /* 부모 요소의 색상 유지 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+/* a 태그의 상태별 스타일 설정 */
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: inherit; /* 모든 상태에서 동일한 색상 유지 */
+    text-decoration: none; /* 모든 상태에서 밑줄 제거 */
+}
+/* 네비게이션 바 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    
+}
+
+.logo {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'MaruBuriBold';
+    color: #333;
+}
+
+.menu a {
+    color: #333;
+    text-decoration: none;
+    font-family: 'MaruBuriSemiBold';
+    font-size: 16px;
+}
+
+/* 검색 바 */
+.search-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    border-bottom: 1px solid #3f3f3f;
+    background-image: url('book2.jpg');
+
+
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 500px;
+}
+
+.search-box select,
+.search-box input[type="text"],
+.search-box button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #3f3f3f;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.search-box select {
+    flex: 1;
+}
+
+.search-box input[type="text"] {
+    flex: 3;
+}
+
+.search-box button {
+    cursor: pointer;
+}
+
+/* 검색 결과 영역 */
+.results-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px 40px;
+    padding: 20px 20px;
+    max-width: 800px;
+    min-height: 500px;
+    margin: auto auto;
+    font-size: 10px;
+    line-height: 30px;
+    
+}
+
+/* 첫 번째 검색 결과 강조 */
+.first-book {
+    background-color: #f5faff; /* 부드러운 파란색 배경 */
+    border: 1px solid #3f3f3f;
+    display: flex; /* 플렉스 레이아웃으로 변경 */
+    flex-wrap: nowrap; /* 가로 정렬 고정 */
+    align-items: flex-start; /* 이미지와 설명 위쪽 정렬 */
+    width: 80%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 1px  1px 5px #3f3f3f;
+    gap: 20px; /* 이미지와 설명 간격 */
+    margin: 0 auto; /* 가운데 정렬 */
+    background-color: #f9f9f9;
+    font-size: 12px;
+}
+
+
+.first-book img {
+    flex: 150px  225px; /* 고정된 이미지 크기 */
+    height: 400px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.first-book-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.first-book-details h2 {
+    font-size: 1.5em;
+    margin: 0;
+    font-weight: bold;
+}
+
+.first-book-details p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* 나머지 검색 결과 그리드 */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.book {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #3f3f3f;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    background-color: #fff; /* 부드러운 파란색 배경 */
+    border: 0.5px solid #3f3f3f;
+}
+
+.book:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.book img {
+    width: 150px;
+    height: 225px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.book h3 {
+    font-size: 1em;
+    margin: 10px 0;
+    overflow-wrap: break-word;
+}
+
+.book p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 5px 0;
+    line-height: 1.4;
+    
+}
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4개의 열로 구성 */
+    gap: 50px; /* 카드 간 간격 */
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+/* OpenAI 검색 컨테이너 */
+.openai-search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    border: 2px solid #3f3f3f;
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'MaruBuriSemiBold';
+}
+
+/* 검색창 */
+.openai-search-container textarea {
+    width: 100%;
+    height: 100px;
+    font-size: 18px;
+    padding: 15px;
+    border: 2px solid #3f3f3f;
+    border-radius: 10px;
+    box-sizing: border-box;
+    resize: none; /* 크기 조정 비활성화 */
+    margin-bottom: 20px;
+    font-family: 'MaruBuriSemiBold';
+}
+
+/* 검색 버튼 */
+.openai-search-container button {
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #9672ea;
+    border: none;
+    border-radius: 10px;
+    font-family: 'MaruBuriSemiBold';
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.openai-search-container button:hover {
+    background-color: #3f3f3f;
+    transform: scale(1.05);
+}
+
+/* 결과 컨테이너 */
+.openai-results-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto 0;
+    padding: 20px;
+    border: 3px solid #3f3f3f;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px #000(0, 0, 0, 5);
+    font-family: 'MaruBuriSemiBold';
+}
+
+/* 결과 제목 */
+.openai-results-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: 'MaruBuriSemiBold';
+    text-align: center;
+    color: #333;
+}
+
+/* 결과 텍스트 */
+.openai-results-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: 'MaruBuriSemiBold';
+    color: #444;
+}
+/* 중앙 정렬 스타일 */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #555;
+    font-family: 'MaruBuriExtraLight';
+}
+
+
+/* 설명창 스타일 */
+.description-container {
+    position: fixed; /* 화면에 고정 */
+    top: 300px; /* 페이지 상단에서부터의 거리 */
+    right: 120px; /* 페이지 오른쪽에서부터의 거리 */
+    width: 150px; /* 설명창 너비 */
+    height: 300px;
+    padding: 20px;
+    border: 2px solid #2c9749; /* 테두리 색상 */
+    border-radius: 10px; /* 둥근 모서리 */
+    background-color: #f9f9f9; /* 배경색 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    font-family: 'MaruBuriSemiBold';
+    line-height: 1.8; /* 줄 간격 */
+    color: #333; /* 텍스트 색상 */
+}
+
+/* 설명 텍스트 스타일 */
+.description-container p {
+    font-size: 13px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.description-container strong {
+    font-weight: bold;
+    color: #000;
+    font-size:13.5px;
+}
+/* ChatGPT 스타일 컨테이너 */
+.openai-chat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #000;
+    
+}
+
+.chat-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.chat-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'MaruBuriSemiBold';    
+    color: #333;
+}
+
+/* 메시지 영역 */
+.chat-messages {
+    white-space: pre-wrap;
+    height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #3f3f3f;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    border: 2px solid #000;
+    margin-bottom: 20px;
+}
+
+.chat-message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'MaruBuriSemiBold';    
+    font-size: 16px;
+}
+
+.chat-message.user {
+    text-align: right;
+    background-color: #E1E1E3;
+    color: #333;
+    margin-left: 400px;
+}
+
+.chat-message.assistant {
+    text-align: left;
+    background-color:  #E9E9E6;
+    max-width: 800px;
+    color: #3f3f3f;
+}
+
+/* 입력창 */
+.chat-input-container {
+    display: flex;
+    gap: 10px;
+}
+
+#chatInput {
+    flex: 1;
+    height: 50px;
+    padding: 10px;
+    border: 1px solid #3f3f3f;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'MaruBuriSemiBold';    
+    resize: none;
+}
+
+#sendMessageBtn {
+    padding: 10px 20px;
+    background-color: #3f3f3f;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'MaruBuriSemiBold';    
+    transition: background-color 0.3s;
+}
+
+#sendMessageBtn:hover {
+    background-color:#F1ECE1;
+}
+
+/* 푸터 */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+.chat-wrapper {
+    background-image: url('book2.jpg') ; /* 배경 이미지 */
+    background-size: cover; /* 배경 이미지 크기 조정 */
+    background-repeat: no-repeat; /* 반복 방지 */
+    background-position: center; /* 배경 이미지 중앙 정렬 */
+    padding: 5px; /* 내부에 여백 추가 (5px 간격) */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 효과 */
+}
+.openai-chat-container {
+    background-color: #ffffff; /* 내부 배경 */
+    border-radius: 10px; /* 내부 모서리 둥글게 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 내부 그림자 효과 */
+    padding: 20px; /* 내부 여백 */
+}
