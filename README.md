@@ -28,7 +28,12 @@
 3. 사용 API
    - Naver Book API
    - OpenAI API ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
-  
+
+
+## 발표정보
+[PPT발표 ](./발표자료/ReadMate.pptx)
+[포스터 ](./발표자료/READMATE_Poster.pdf)
+
 # 실행화면
 ![DemoScreen1](./DemoScreen/MainPage1.png)
 ![DemoScreen2](./DemoScreen/MainPage2.png)
