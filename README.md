@@ -34,14 +34,10 @@
 - [PPT발표 ](./발표자료/ReadMate.pptx)
 - [포스터 ](./발표자료/READMATE_Poster.pdf)
 
-# 실행화면
-![DemoScreen1](./DemoScreen/MainPage1.png)
-![DemoScreen2](./DemoScreen/MainPage2.png)
-![DemoScreen3](./DemoScreen/AIChat1.png)
-![DemoScreen4](./DemoScreen/AIChat2.png)
 
 
-#소스코드
+
+# 소스코드
 ## Flask서버를 사용한 Backend APP.py
 ### CORS에러를 우회하기 위해 flask서버 활용.
 ### MainPage에 필요한 정보를 불러오는 소스코드드(NaverAPI)
@@ -133,6 +129,9 @@ def book_detail():
     }
 });
 ```
+## 실행화면
+![DemoScreen1](./DemoScreen/MainPage1.png)
+![DemoScreen2](./DemoScreen/MainPage2.png)
 # OPEN AI 
 ## OPEN AI 를 사용해 사용자 맞춤형 질문에 응답.<br>
 
@@ -175,7 +174,9 @@ def book_detail():
         }
     }
 ```
-
+## 실행화면
+![DemoScreen3](./DemoScreen/AIChat1.png)
+![DemoScreen4](./DemoScreen/AIChat2.png)
 ### 개발과정중 문제
 #### app.py(동적 파일) 파일의 역할은 아래와 같다.
 - Flask 서버 실행: 클라이언트 요청을 처리하는 웹 서버를 실행.(cors문제로 인해서 사용)
