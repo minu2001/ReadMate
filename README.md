@@ -30,7 +30,11 @@
    - OpenAI API ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
   
 # 실행화면
-![alt text](.DemoScreen/MainPage1.png)
+![DemoScreen](.DemoScreen/MainPage1.png)
+![DemoScreen](.DemoScreen/MainPage2.png)
+![DemoScreen](.DemoScreen/AIChat1.png)
+![DemoScreen](.DemoScreen/AIChat2.png)
+
 
 #소스코드
 ## Flask서버를 사용한 Backend APP.py
