@@ -1,22 +1,21 @@
 # ReadMate
 "NAVER_API" 와 "OPENAI_API"를 사용해 만든 사용자 맞춤형 북 서칭 웹사이트
 
-
-##개발 목적
+### 개발 목적
 1. 독서는 숏폼과 같은 온라인 콘텐츠에 비해 독서는 시간과 집중력이 많이 요구되고 즉각적인 보상이나 자극을 느끼기 어렵기 때문에 부담을 가지게 되는 현실입니다. 저희는 독서시간을 어쩔 수 없다면 독서를 하기까지 걸리는 시간을 단축하고자 하는 목표를 잡았습니다.
 
-###프로젝트 개요
+### 프로젝트 개요
 1. “ReadMate”는 네이버 북 API를 사용하여 Google API보다 한국어 검색에 더 최적화된 결과를 제공하는 것을 바탕으로 한국인 사용자를 타겟으로 제작되었습니다.
 2. 또한, OpenAI API와 접목시켜 단순한 책 검색 기능을 넘어 사용자의 취향과 관심사를 반영한 맞춤형 책 추천 기능을 제공합니다. 이를 통해 사용자들은 책 선택에 소요되는 시간과 고민을 줄일 수 있으며, 더욱 만족도 높은 독서 경험을 누릴 수 있습니다.
 
-###기대효과
+### 기대효과
 1. 한국어 기반 최적화된 책 검색
 2. 맞춤형 AI 추천을 통한 독서 경험 향상
 3. 독서에 대한 흥미와 접근성 증가
 4. 시간과 비용 절약
 5. 개인화된 데이터 활용의 가능성
 
-### 사용기술 스택
+## 사용기술 스택
 1. FrontEnd
    - HTML ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
    - CSS ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
@@ -29,11 +28,14 @@
 3. 사용 API
    - Naver Book API
    - OpenAI API ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
+  
+# 실행화면
+![alt text](한강실행결과.png)
 
-
-#Flask서버를 사용한 Backend APP.py
-- CORS에러를 우회하기 위해 flask서버 활용.
-## MainPage에 필요한 정보를 불러오는 소스코드드(NaverAPI)
+#소스코드
+## Flask서버를 사용한 Backend APP.py
+### CORS에러를 우회하기 위해 flask서버 활용.
+### MainPage에 필요한 정보를 불러오는 소스코드드(NaverAPI)
 ```python
     headers = {
         "X-Naver-Client-Id": CLIENT_ID,
@@ -66,7 +68,7 @@ def book_detail():
         return "잘못된 요청입니다. 링크가 없습니다.", 400
 ```
 ## AI책 추천부분(OpenAI API)
-- assistant에 지침을 주고 사용자의 입력에 기본 입력값을 설정
+#### assistant에 지침을 주고 사용자의 입력에 기본 입력값을 설정
 ```python
     if not query:
         return jsonify({'error': '검색어를 입력해주세요.'}), 400
@@ -83,8 +85,8 @@ def book_detail():
             temperature=0.7,
         )
 ```
-# NaverAPI
-## 한국인을 타깃하여 사용한 책 검색 API<br>
+## NaverAPI
+### 한국인을 타깃하여 사용한 책 검색 API<br>
 
 - 책 검색결과를 나타내게 만든 JavaScript 부분.
 ```javascript
