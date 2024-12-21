@@ -19,16 +19,16 @@
 ### 사용기술 스택
 1. FrontEnd
    - HTML ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-   - CSS [CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+   - CSS ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
    - JavaScript ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
 2. BackEnd
-   - Python
-   - Flask
+   - Python ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-
+   - Flask ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
 
 3. 사용 API
    - Naver Book API
-   - OpenAI API
+   - OpenAI API ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
 
 
 #Flask서버를 사용한 Backend APP.py
