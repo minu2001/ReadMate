@@ -1,12 +1,36 @@
 # ReadMate
 "NAVER_API" 와 "OPENAI_API"를 사용해 만든 사용자 맞춤형 북 서칭 웹사이트
-# Project1-2024-2
-Ai_Software_Project1_2024_2
-2024-09-12
-오늘은 날씨도 별로라 학교 재낄까 하다 이교수님 수업 들으러 왔는데 좋았다.
 
 
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)![Windows 11](https://img.shields.io/badge/Windows%2011-%230079d5.svg?style=for-the-badge&logo=Windows%2011&logoColor=white)![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+##개발 목적
+1. 독서는 숏폼과 같은 온라인 콘텐츠에 비해 독서는 시간과 집중력이 많이 요구되고 즉각적인 보상이나 자극을 느끼기 어렵기 때문에 부담을 가지게 되는 현실입니다. 저희는 독서시간을 어쩔 수 없다면 독서를 하기까지 걸리는 시간을 단축하고자 하는 목표를 잡았습니다.
+
+###프로젝트 개요
+1. “ReadMate”는 네이버 북 API를 사용하여 Google API보다 한국어 검색에 더 최적화된 결과를 제공하는 것을 바탕으로 한국인 사용자를 타겟으로 제작되었습니다.
+2. 또한, OpenAI API와 접목시켜 단순한 책 검색 기능을 넘어 사용자의 취향과 관심사를 반영한 맞춤형 책 추천 기능을 제공합니다. 이를 통해 사용자들은 책 선택에 소요되는 시간과 고민을 줄일 수 있으며, 더욱 만족도 높은 독서 경험을 누릴 수 있습니다.
+
+###기대효과
+1. 한국어 기반 최적화된 책 검색
+2. 맞춤형 AI 추천을 통한 독서 경험 향상
+3. 독서에 대한 흥미와 접근성 증가
+4. 시간과 비용 절약
+5. 개인화된 데이터 활용의 가능성
+
+### 사용기술 스택
+1. FrontEnd
+   - HTML ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+   - CSS [CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+   - JavaScript ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
+2. BackEnd
+   - Python
+   - Flask
+
+3. 사용 API
+   - Naver Book API
+   - OpenAI API
+
+
 #Flask서버를 사용한 Backend APP.py
 - CORS에러를 우회하기 위해 flask서버 활용.
 ## MainPage에 필요한 정보를 불러오는 소스코드드(NaverAPI)
@@ -141,34 +165,23 @@ def book_detail():
     }
 ```
 
-개발순서
-1. 소스수정
-2. 소스저장
-3. 스테이지
-4. 커밋 앤 푸쉬
-5. 커밋 메시지
+### 개발과정중 문제
+#### app.py(동적 파일) 파일의 역할은 아래와 같다.
+- Flask 서버 실행: 클라이언트 요청을 처리하는 웹 서버를 실행.(cors문제로 인해서 사용)
+- 책 검색 기능: 네이버 북 API를 호출해 검색 결과를 반환.
+- AI 추천 기능: OpenAI API를 호출해 사용자 취향에 맞는 책 추천 결과를 반환.
 
-2024-09-19 깃허브 연동 실습
-로컬에서 편집함.
+#### CORS란?
+CORS (Cross-Origin Resource Sharing)
+보안상의 이유로 다른 출처의 리소스 요청을 제한하는 브라우저 정책 입니다.
 
-2024-10-19 
-CapStoneProject 중간과제 제출
-이 웹사이트의 기능 :
-1. 이미지 업로드 기능 : 사용자는 웹페이지에서 파일 업로드 버튼을 클릭하여 이미지를 업로드할 수 있습니다.
-이 이미지는 Base64 형식으로 변환되어 서버로 전송되기 전에 텍스트 형식으로 변환됩니다. 
+클라이언트(프론트엔드)가 localhost:3000에서 실행 중인데,
+외부 서버(API)로 바로 요청을 보내면 브라우저가 이를 차단함.
+- 예를 들어, 네이버 API는 https://openapi.naver.com이라는 도메인에 있을 때, 너의 웹 애플리케이션이 실행되는 도메인이 http://localhost:5000이라면, 브라우저는 서로 다른 도메인 간 요청을 "의심스러운 행동"으로 간주합니다.
 
-2. Google Vision API가 이미지 분석 결과를 반환하면, 반환된 데이터에는 이미지 속 사람들의 얼굴 정보와 감정 상태(웃는 표정, 우는 표정, 흐릿한 얼굴 등)가 포함됩니다.
-감지된 얼굴이 여러 명일 경우, 각각의 얼굴에 대해 "무표정", "웃는 표정", "우는 표정", "얼굴이 흐릿함" 등의 감정 상태가 표시됩니다.
+#### Flask 서버를 도입해서 문제를 해결
+중간 서버(Proxy) 역할을 수행.
+클라이언트(브라우저)가 Flask 서버로 요청 → Flask 서버가 외부 API에 요청 → 응답을 받아 클라이언트에 전달.
+이를 통해 CORS 문제를 우회할 수 있음.
 
-3. css를 사용해 깔끔한 디자인을 뽑아내었습니다.
 
-1. 텍스트 기반 시스템(우리가 Json형태를 사용함.)과 호환성이 좋은 Base64 형식을 사용.
-2. response.responses[0].faceAnnotations 50번쨰 줄에 있는 이코드가 로그창의 faceAnnotations
-정보를 가져오는 코드이다.
-3. 감정 분석 처리:
-얼굴 감지 결과에 포함된 joyLikelihood, sorrowLikelihood, blurredLikelihood 값을 확인하여 
-웃는 표정(joyLikelihood), 우는 표정(sorrowLikelihood), 또는 얼굴이 가려져 있거나 흐릿한 경우(blurredLikelihood)를 분석합니다.
-4. i문을 접목시켜서 blurredLikelihood부터 시작해 VERY_LIKELY OR LIKELY부분이 떠있다면 출력 아니면 다음 
-else if문으로 가서 다른 감정들이 해당하는지 확인하게 코딩했습니다.
-5. 그 후 마지막 결과를 textArea부분에 출력되게 했습니다.
-+Css
